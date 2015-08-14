@@ -16,6 +16,26 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    [Parse enableLocalDatastore];
+    
+    // Initialize Parse.
+    [Parse setApplicationId:@"chlU4F9HuEo5avZjwv4mOAHLOIFvnaUkLA4yM6wV"
+                  clientKey:@"tm9dhknoYEWHxJ5ZxxuFgzg1hBQfjIFPSG3mKM4d"];
+    
+    // [Optional] Track statistics around application opens.
+    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+    
+    
+    [PFConfig getConfigInBackgroundWithBlock:^(PFConfig *config, NSError *error) {
+        if (!error) {
+            NSLog(@"Yay! Config was fetched from the server.");
+        } else {
+            NSLog(@"Failed to fetch. Using Cached Config.");
+            config = [PFConfig currentConfig];
+        }
+    }];
+    
     // Override point for customization after application launch.
     return YES;
 }
