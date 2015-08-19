@@ -82,7 +82,7 @@
         UIImageView *adView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, [[UIScreen mainScreen] bounds].size.width, [[UIScreen mainScreen] bounds].size.height)];
         adView.tag = 999;
         [adView setImage:adImage];
-        [NSTimer scheduledTimerWithTimeInterval:3 target:self selector:@selector(closeAdView) userInfo:nil repeats:NO];
+        [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(closeAdView) userInfo:nil repeats:NO];
         
         [self.view addSubview:adView];
     }

@@ -36,6 +36,10 @@
         }
     }];
     
+    [PFUser enableAutomaticUser];
+    [[PFUser currentUser] incrementKey:@"RunCount"];
+    [[PFUser currentUser] saveInBackground];
+    
     // Override point for customization after application launch.
     return YES;
 }
