@@ -35,4 +35,5 @@
 
 @protocol MenuCollectionViewCellDelegate
 - (void)favButtonClicked:(int)selected obj:(PFObject *)obj;
+- (void)viewButtonClicked:(PFObject *)obj;
 @end

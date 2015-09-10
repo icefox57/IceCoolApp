@@ -14,6 +14,8 @@
 {
     NSArray *datasourceArray;
     NSMutableArray *relationArray;
+    
+    NSTimer *testTimer;
 }
 @property (weak, nonatomic) IBOutlet UICollectionView *meunCollectionView;
 
@@ -51,6 +53,30 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
+//-(void)viewDidAppear:(BOOL)animated
+//{
+//    testTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(showTips) userInfo:nil repeats:YES];
+//}
+//
+//-(void)showTips
+//{
+//    UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake([[UIScreen mainScreen]bounds].size.width-100, [[UIScreen mainScreen]bounds].size.height/2, 100, 30)];
+//    label.text = @"弹幕测试...";
+//    [self.view addSubview:label];
+//    
+//    [UIView animateWithDuration:1.5 animations:^{
+//        CGRect rect = label.frame;
+//        rect.origin.y = 0;
+//        [label setFrame:rect];
+//        label.alpha = 0;
+//    } completion:^(BOOL finished) {
+//        [label removeFromSuperview];
+//    }];
+//}
+
+#pragma mark - Collection View
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
@@ -126,6 +152,8 @@
     
 }
 
+#pragma mark - Cell Delegate
+
 -(void)favButtonClicked:(int)selected obj:(PFObject *)obj{
     if (selected) {
         [relationArray removeObject:obj];
@@ -139,8 +167,28 @@
     [_meunCollectionView reloadData];
 }
 
+-(void)viewButtonClicked:(PFObject *)obj{
+    switch ([obj[@"menuType"]integerValue]) {
+        case 1:
+            
+            break;
+        case 2:
+            
+            break;
+        case 3:
+            [self performSegueWithIdentifier:@"segueToWater" sender:self];
+            break;
+        case 4:
+            
+            break;
+        default:
+            break;
+    }
+}
+
 
 #pragma mark - Animation
+
 -(void)addFavAnimation
 {
     UIImage *heartImage = [UIImage imageNamed:@"list_icon_loved"];

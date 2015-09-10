@@ -363,11 +363,30 @@
                     </view>
                     <connections>
                         <outlet property="meunCollectionView" destination="XfU-fl-To2" id="nnt-hj-OGo"/>
+                        <segue destination="Rkh-c5-5iP" kind="show" identifier="segueToWater" id="50c-AH-WK7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lBz-Eb-4ZI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1120.5" y="421.5"/>
+        </scene>
+        <!--Water Flow View Controller-->
+        <scene sceneID="MWM-CZ-Dtg">
+            <objects>
+                <viewController id="Rkh-c5-5iP" customClass="WaterFlowViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="c3m-Ag-Clj"/>
+                        <viewControllerLayoutGuide type="bottom" id="mF0-Sx-GlX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0h1-lM-e4T">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NNL-VB-ghU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1754.5" y="421.5"/>
         </scene>
     </scenes>
     <resources>

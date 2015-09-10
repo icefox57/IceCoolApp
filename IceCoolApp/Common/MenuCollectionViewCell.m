@@ -46,6 +46,8 @@
             [_currentObj incrementKey:@"view"];
             count = [_lbCount2.text intValue];
             _lbCount2.text = [NSString stringWithFormat:@"%d",count+1];
+            
+            [_delegate viewButtonClicked:_currentObj];
             break;
         case 3:
             [_currentObj incrementKey:@"like"];

@@ -71,7 +71,9 @@ typedef enum
 
 
 //-----------------Server Info------------
-#define AppDBHost @"http://ethiconbio.lhc.com.cn/ajaxhost/host.ashx"
-
+#define HuceoDBHost @"http://api.huceo.com/"
+#define BaiduDBHost @"http://apis.baidu.com/txapi/mvtp/"
+#define HuceoAppKey @"925de129881df83de903972443b635ed"
+#define BaiduAppKey @"a3b62beaf144fca03b63b3855fa61418"
 
 

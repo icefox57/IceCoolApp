@@ -32,7 +32,6 @@
             NSLog(@"Yay! Config was fetched from the server.");
         } else {
             NSLog(@"Failed to fetch. Using Cached Config.");
-            config = [PFConfig currentConfig];
         }
     }];
     

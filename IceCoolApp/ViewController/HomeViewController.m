@@ -38,11 +38,15 @@
     //添加广告视图
     isAdCached = NO;
     [self addAdViewBy:@"launchImage"];
+    
+    [super viewWillAppear:animated];
 }
 
 -(void)viewDidAppear:(BOOL)animated
 {
     isAdCached = YES;
+    
+    [super viewDidAppear:animated];
 }
 
 - (IBAction)goClicked:(id)sender
@@ -58,7 +62,7 @@
 }
 
 
-
+#pragma mark - AD 自定义广告
 
 -(void)addAdViewBy:(NSString *)paramName
 {
