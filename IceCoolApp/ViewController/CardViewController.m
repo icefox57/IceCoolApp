@@ -27,8 +27,10 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    [ApplicationDelegate showLoadingHUD:@"加载中..." view:self.view];
     PFQuery *query = [PFQuery queryWithClassName:@"MenuData"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        [[ApplicationDelegate HUD]dismiss];
         if (!error) {
             datasourceArray = [NSArray arrayWithArray:objects];
             
@@ -176,7 +178,7 @@
             
             break;
         case 3:
-            [self performSegueWithIdentifier:@"segueToWater" sender:self];
+            [self performSegueWithIdentifier:@"segueToPic" sender:self];
             break;
         case 4:
             

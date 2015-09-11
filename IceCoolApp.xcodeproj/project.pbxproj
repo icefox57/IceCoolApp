@@ -67,12 +67,19 @@
 		9A4AA1F11B845CB200F9B079 /* whiteArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A4AA1E91B845CB200F9B079 /* whiteArrow@2x.png */; };
 		9A4AA1F51B845FDB00F9B079 /* CellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A4AA1F31B845FDB00F9B079 /* CellView.m */; };
 		9A4AA1F61B845FDB00F9B079 /* CellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A4AA1F41B845FDB00F9B079 /* CellView.xib */; };
+		9A8FB8781BA2824B00059245 /* FeSpinnerTenDot.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A8FB8751BA2824B00059245 /* FeSpinnerTenDot.m */; };
+		9A8FB8791BA2824B00059245 /* FeTenDot.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A8FB8771BA2824B00059245 /* FeTenDot.m */; };
+		9A8FB87F1BA2825D00059245 /* FXBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A8FB87C1BA2825D00059245 /* FXBlurView.m */; };
+		9A8FB8801BA2825D00059245 /* UIColor+flat.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A8FB87E1BA2825D00059245 /* UIColor+flat.m */; };
 		9AB08F1E1BA1355E00063932 /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AB08F131BA1355E00063932 /* NSObject+SBJSON.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		9AB08F1F1BA1355E00063932 /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AB08F151BA1355E00063932 /* NSString+SBJSON.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		9AB08F201BA1355E00063932 /* SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AB08F171BA1355E00063932 /* SBJSON.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		9AB08F211BA1355E00063932 /* SBJsonBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AB08F191BA1355E00063932 /* SBJsonBase.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		9AB08F221BA1355E00063932 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AB08F1B1BA1355E00063932 /* SBJsonParser.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		9AB08F231BA1355E00063932 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AB08F1D1BA1355E00063932 /* SBJsonWriter.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		9AB08F261BA151F700063932 /* PictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AB08F251BA151F700063932 /* PictureViewController.m */; };
+		9AB08F291BA1536D00063932 /* PictureCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AB08F281BA1536D00063932 /* PictureCollectionViewCell.m */; };
+		9ADFA68F1BA17AD300BAFB0B /* IceWaterFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ADFA68E1BA17AD300BAFB0B /* IceWaterFlowLayout.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -169,6 +176,14 @@
 		9A4AA1F21B845FDB00F9B079 /* CellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellView.h; sourceTree = "<group>"; };
 		9A4AA1F31B845FDB00F9B079 /* CellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CellView.m; sourceTree = "<group>"; };
 		9A4AA1F41B845FDB00F9B079 /* CellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellView.xib; sourceTree = "<group>"; };
+		9A8FB8741BA2824B00059245 /* FeSpinnerTenDot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeSpinnerTenDot.h; sourceTree = "<group>"; };
+		9A8FB8751BA2824B00059245 /* FeSpinnerTenDot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeSpinnerTenDot.m; sourceTree = "<group>"; };
+		9A8FB8761BA2824B00059245 /* FeTenDot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeTenDot.h; sourceTree = "<group>"; };
+		9A8FB8771BA2824B00059245 /* FeTenDot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeTenDot.m; sourceTree = "<group>"; };
+		9A8FB87B1BA2825D00059245 /* FXBlurView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXBlurView.h; sourceTree = "<group>"; };
+		9A8FB87C1BA2825D00059245 /* FXBlurView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXBlurView.m; sourceTree = "<group>"; };
+		9A8FB87D1BA2825D00059245 /* UIColor+flat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+flat.h"; sourceTree = "<group>"; };
+		9A8FB87E1BA2825D00059245 /* UIColor+flat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+flat.m"; sourceTree = "<group>"; };
 		9AB08F111BA1355E00063932 /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
 		9AB08F121BA1355E00063932 /* NSObject+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJSON.h"; sourceTree = "<group>"; };
 		9AB08F131BA1355E00063932 /* NSObject+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SBJSON.m"; sourceTree = "<group>"; };
@@ -182,6 +197,12 @@
 		9AB08F1B1BA1355E00063932 /* SBJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonParser.m; sourceTree = "<group>"; };
 		9AB08F1C1BA1355E00063932 /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
 		9AB08F1D1BA1355E00063932 /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
+		9AB08F241BA151F700063932 /* PictureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PictureViewController.h; sourceTree = "<group>"; };
+		9AB08F251BA151F700063932 /* PictureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PictureViewController.m; sourceTree = "<group>"; };
+		9AB08F271BA1536D00063932 /* PictureCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PictureCollectionViewCell.h; sourceTree = "<group>"; };
+		9AB08F281BA1536D00063932 /* PictureCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PictureCollectionViewCell.m; sourceTree = "<group>"; };
+		9ADFA68D1BA17AD300BAFB0B /* IceWaterFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IceWaterFlowLayout.h; sourceTree = "<group>"; };
+		9ADFA68E1BA17AD300BAFB0B /* IceWaterFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IceWaterFlowLayout.m; sourceTree = "<group>"; };
 		FF29526054DF95772916EB51 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -351,6 +372,8 @@
 				9A45B4351B7DCD1000327C78 /* CardViewController.m */,
 				9A4AA1C61B8456AE00F9B079 /* WaterFlowViewController.h */,
 				9A4AA1C71B8456AE00F9B079 /* WaterFlowViewController.m */,
+				9AB08F241BA151F700063932 /* PictureViewController.h */,
+				9AB08F251BA151F700063932 /* PictureViewController.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -363,6 +386,10 @@
 				9A4AA1F41B845FDB00F9B079 /* CellView.xib */,
 				9A45B4371B7DCF8200327C78 /* MenuCollectionViewCell.h */,
 				9A45B4381B7DCF8200327C78 /* MenuCollectionViewCell.m */,
+				9AB08F271BA1536D00063932 /* PictureCollectionViewCell.h */,
+				9AB08F281BA1536D00063932 /* PictureCollectionViewCell.m */,
+				9ADFA68D1BA17AD300BAFB0B /* IceWaterFlowLayout.h */,
+				9ADFA68E1BA17AD300BAFB0B /* IceWaterFlowLayout.m */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -370,6 +397,7 @@
 		9A14B4BC1B7C65D3005EE800 /* ThirdPart */ = {
 			isa = PBXGroup;
 			children = (
+				9A8FB8721BA2822600059245 /* FeHud */,
 				9AB08F101BA1355E00063932 /* SBJSON */,
 				9A4AA1C91B8459A700F9B079 /* PSCollectionView */,
 				9A14B4ED1B7C8C4E005EE800 /* YLGIFImage.h */,
@@ -411,6 +439,37 @@
 				9A4AA1E91B845CB200F9B079 /* whiteArrow@2x.png */,
 			);
 			name = PSCollectionView;
+			sourceTree = "<group>";
+		};
+		9A8FB8721BA2822600059245 /* FeHud */ = {
+			isa = PBXGroup;
+			children = (
+				9A8FB87A1BA2824F00059245 /* Tool */,
+				9A8FB8731BA2823C00059245 /* Ten dot */,
+			);
+			name = FeHud;
+			sourceTree = "<group>";
+		};
+		9A8FB8731BA2823C00059245 /* Ten dot */ = {
+			isa = PBXGroup;
+			children = (
+				9A8FB8741BA2824B00059245 /* FeSpinnerTenDot.h */,
+				9A8FB8751BA2824B00059245 /* FeSpinnerTenDot.m */,
+				9A8FB8761BA2824B00059245 /* FeTenDot.h */,
+				9A8FB8771BA2824B00059245 /* FeTenDot.m */,
+			);
+			name = "Ten dot";
+			sourceTree = "<group>";
+		};
+		9A8FB87A1BA2824F00059245 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				9A8FB87B1BA2825D00059245 /* FXBlurView.h */,
+				9A8FB87C1BA2825D00059245 /* FXBlurView.m */,
+				9A8FB87D1BA2825D00059245 /* UIColor+flat.h */,
+				9A8FB87E1BA2825D00059245 /* UIColor+flat.m */,
+			);
+			name = Tool;
 			sourceTree = "<group>";
 		};
 		9AB08F101BA1355E00063932 /* SBJSON */ = {
@@ -600,8 +659,13 @@
 				9A4AA1DE1B845CAC00F9B079 /* LoadMoreTableFooterView.m in Sources */,
 				9A4AA1C81B8456AE00F9B079 /* WaterFlowViewController.m in Sources */,
 				9AB08F1E1BA1355E00063932 /* NSObject+SBJSON.m in Sources */,
+				9AB08F291BA1536D00063932 /* PictureCollectionViewCell.m in Sources */,
 				9A45B4331B7DCCC400327C78 /* RGCardViewLayout.m in Sources */,
 				9A4AA1D11B845A0200F9B079 /* PSCollectionViewCell.m in Sources */,
+				9A8FB8791BA2824B00059245 /* FeTenDot.m in Sources */,
+				9ADFA68F1BA17AD300BAFB0B /* IceWaterFlowLayout.m in Sources */,
+				9A8FB87F1BA2825D00059245 /* FXBlurView.m in Sources */,
+				9AB08F261BA151F700063932 /* PictureViewController.m in Sources */,
 				9AB08F1F1BA1355E00063932 /* NSString+SBJSON.m in Sources */,
 				9A4AA1E11B845CAC00F9B079 /* PullPsCollectionView.m in Sources */,
 				9AB08F231BA1355E00063932 /* SBJsonWriter.m in Sources */,
@@ -610,7 +674,9 @@
 				9A14B4951B7C6585005EE800 /* main.m in Sources */,
 				9A4AA1E01B845CAC00F9B079 /* PullTableView.m in Sources */,
 				9A14B4C31B7C66ED005EE800 /* HomeViewController.m in Sources */,
+				9A8FB8801BA2825D00059245 /* UIColor+flat.m in Sources */,
 				9A45B4391B7DCF8200327C78 /* MenuCollectionViewCell.m in Sources */,
+				9A8FB8781BA2824B00059245 /* FeSpinnerTenDot.m in Sources */,
 				9A4AA1DF1B845CAC00F9B079 /* MessageInterceptor.m in Sources */,
 				9A4AA1DD1B845CAC00F9B079 /* EGORefreshTableHeaderView.m in Sources */,
 				9A14B4F11B7C8C4E005EE800 /* YLGIFImage.m in Sources */,

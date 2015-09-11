@@ -65,4 +65,12 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+-(void)showLoadingHUD:(NSString *)text view:(UIView *)view
+{
+    _HUD = [[FeSpinnerTenDot alloc] initWithView:view withBlur:NO];
+    _HUD.titleLabelText = text;
+    [view addSubview:_HUD];
+    [_HUD show];
+}
+
 @end

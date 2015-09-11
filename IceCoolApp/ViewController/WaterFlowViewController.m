@@ -184,7 +184,7 @@
             }
         }
 
-        [self dataSourceDidLoad];
+//        [self dataSourceDidLoad];
         
         if (!responseObject && ![responseObject isKindOfClass:[NSDictionary class]]) {
             [GlobalVariables handleErrorByString:@"登入失败!请确认网络连接!"];
@@ -196,10 +196,6 @@
         NSLog(@"Error: %@", error);
 //        [self dataSourceDidError];
     }];
-    
-//    NSString *httpUrl = @"http://apis.baidu.com/txapi/mvtp/meinv";
-//    NSString *httpArg = @"num=10";
-//    [self request: httpUrl withHttpArg: httpArg];
 }
 
 

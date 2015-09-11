@@ -13,6 +13,8 @@
 @interface HomeViewController ()
 {
     BOOL isAdCached;
+    
+    CGRect btRect;
 }
 @property (weak, nonatomic) IBOutlet YLImageView *imgBg;
 @property (weak, nonatomic) IBOutlet UIButton *btGo;
@@ -26,6 +28,11 @@
     // Do any additional setup after loading the view.
     
     _imgBg.image = [YLGIFImage imageNamed:@"lg.gif"];
+    btRect = _btGo.frame;
+    
+    //添加广告视图
+    isAdCached = NO;
+    [self addAdViewBy:@"launchImage"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -35,9 +42,10 @@
 
 -(void)viewWillAppear:(BOOL)animated
 {
-    //添加广告视图
-    isAdCached = NO;
-    [self addAdViewBy:@"launchImage"];
+    self.navigationController.navigationBarHidden = YES;
+    
+    [_btGo setFrame:btRect];
+    _btGo.alpha = 1;
     
     [super viewWillAppear:animated];
 }
@@ -51,13 +59,13 @@
 
 - (IBAction)goClicked:(id)sender
 {
-    CGRect rect = _btGo.frame;
+    CGRect rect = btRect;
     rect.origin.x += [[UIScreen mainScreen]bounds].size.width/1.5;
     [UIView animateWithDuration:1 animations:^{
         [_btGo setFrame:rect];
         _btGo.alpha = 0;
     } completion:^(BOOL finished) {
-        [self performSegueWithIdentifier:@"segueToMain" sender:self];
+        [self performSegueWithIdentifier:@"test" sender:self];//segueToMain
     }];
 }
 
