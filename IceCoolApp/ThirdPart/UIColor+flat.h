@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface UIColor (flat)
-
++ (UIColor*)flatSpinnerColor;
 + (UIColor*)flatTurquoiseColor;
 + (UIColor*)flatGreenSeaColor;
 + (UIColor*)flatEmeraldColor;

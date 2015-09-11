@@ -11,10 +11,16 @@
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "AFNetworking.h"
 #import "NSString+SBJSON.h"
+#import "MJRefresh.h"
 
 #define defaultImageWidth 320
 #define defaultImageHeight 320
 
+typedef enum
+{
+    DBActionTypeLoadMore = 1,
+    DBActionTypesRefresh = 2
+} DBActionTypes;
 
 @interface PictureViewController ()<UICollectionViewDataSource,UICollectionViewDelegate>
 {
@@ -33,6 +39,57 @@
     dataSourceArray = [NSMutableArray array];
     imageSizeDic = [NSMutableDictionary dictionary];
     
+    
+    MJRefreshNormalHeader *header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(refreshData)];
+    
+    // 设置文字
+    [header setTitle:@"下拉刷新" forState:MJRefreshStateIdle];
+    [header setTitle:@"释放刷新" forState:MJRefreshStatePulling];
+    [header setTitle:@"Loading ..." forState:MJRefreshStateRefreshing];
+    
+    // 设置字体
+    header.stateLabel.font = [UIFont systemFontOfSize:15];
+    header.lastUpdatedTimeLabel.font = [UIFont systemFontOfSize:14];
+    
+    // 设置颜色
+    header.stateLabel.textColor = [UIColor whiteColor];
+    header.lastUpdatedTimeLabel.textColor = [UIColor whiteColor];
+    
+    // 设置刷新控件
+    _picCollectionView.header = header;
+    
+    
+    
+    MJRefreshBackNormalFooter *footer = [MJRefreshBackNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMore)];
+    
+    // 设置文字
+    [footer setTitle:@"上拉加载更多" forState:MJRefreshStateIdle];
+    [footer setTitle:@"释放加载更多" forState:MJRefreshStatePulling];
+    [footer setTitle:@"Loading ..." forState:MJRefreshStateRefreshing];
+    
+    // 设置字体
+    footer.stateLabel.font = [UIFont systemFontOfSize:15];
+    
+    // 设置颜色
+    footer.stateLabel.textColor = [UIColor whiteColor];
+    
+    // 设置刷新控件
+    _picCollectionView.footer = footer;
+
+    
+    
+    // 下拉刷新
+//    _picCollectionView.header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+//        // 进入刷新状态后会自动调用这个block
+//        [self loadDataSource:DBActionTypesRefresh];
+//    }];
+    
+    // 上拉刷新
+//    _picCollectionView.footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
+//        // 进入刷新状态后会自动调用这个block
+//        [self loadDataSource:DBActionTypeLoadMore];
+//    }];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -43,10 +100,10 @@
 -(void)viewWillAppear:(BOOL)animated{
     self.navigationController.navigationBarHidden = NO;
     
-    [self loadDataSource];
+    [self loadDataSource:DBActionTypeLoadMore];
 }
 
--(void)viewDidDisappear:(BOOL)animated
+-(void)viewWillDisappear:(BOOL)animated
 {
     self.navigationController.navigationBarHidden = YES;
 }
@@ -128,16 +185,27 @@
 
 
 #pragma mark - DB
-
-- (void)loadDataSource
+-(void)loadMore
 {
-    [ApplicationDelegate showLoadingHUD:@"加载中..." view:self.view];
+    [self loadDataSource:DBActionTypeLoadMore];
+}
+
+-(void)refreshData
+{
+    [self loadDataSource:DBActionTypesRefresh];
+}
+
+
+- (void)loadDataSource:(DBActionTypes)type
+{
+    [ApplicationDelegate showLoadingHUD:@"Loading..." view:self.view];
     
     NSString *httpUrl = @"http://apis.baidu.com/txapi/mvtp/meinv";
     NSString *httpArg = @"num=30";
-    [self request: httpUrl withHttpArg: httpArg];}
+    [self request: httpUrl withHttpArg: httpArg type:type];
+}
 
--(void)request: (NSString*)httpUrl withHttpArg: (NSString*)HttpArg
+-(void)request: (NSString*)httpUrl withHttpArg: (NSString*)HttpArg type:(DBActionTypes)type
 {
     NSString *urlStr = [[NSString alloc]initWithFormat: @"%@?%@", httpUrl, HttpArg];
     NSURL *url = [NSURL URLWithString: urlStr];
@@ -150,16 +218,17 @@
                                if (error) {
                                    [GlobalVariables handleErrorByString:@"登入失败!请确认网络连接!"];
                                    NSLog(@"Error: %@", error);
-                                   [self dataSourceDidError];
+                                   [self dataSourceDidError:type];
                                } else {
                                    NSString *responseString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
 
                                    NSMutableDictionary *responseDic = [responseString JSONValue];
-                                   
-                                   
-                                   //先得到里面所有的键值   objectEnumerator得到里面的对象  keyEnumerator得到里面的键值
                                    NSEnumerator * enumerator = [responseDic keyEnumerator];
-                                   //把keyEnumerator替换为objectEnumerator即可得到value值（1）
+                                   
+                                   //------------刷新清楚原数据-------------
+                                   if (type == DBActionTypesRefresh) {
+                                       [dataSourceArray removeAllObjects];
+                                   }
                                    
                                    //定义一个不确定类型的对象
                                    id object;
@@ -177,17 +246,18 @@
                                            }
                                        }
                                    }
+
                                    
-                                   [self dataSourceDidLoad];
+                                   [self dataSourceDidLoad:type];
                                    
                                }
                            }];
 }
 
 
-- (void)loadDataSource1
+- (void)loadDataSource1:(DBActionTypes)type
 {
-    [ApplicationDelegate showLoadingHUD:@"加载中..." view:self.view];
+    [ApplicationDelegate showLoadingHUD:@"Loading..." view:self.view];
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     manager.responseSerializer = [AFHTTPResponseSerializer serializer];
@@ -196,7 +266,7 @@
         
         if (!responseObject && ![responseObject isKindOfClass:[NSDictionary class]]) {
             [GlobalVariables handleErrorByString:@"登入失败!请确认网络连接!"];
-            [self dataSourceDidError];
+            [self dataSourceDidError:type];
             return;
         }
         
@@ -207,6 +277,11 @@
         //先得到里面所有的键值   objectEnumerator得到里面的对象  keyEnumerator得到里面的键值
         NSEnumerator * enumerator = [responseDic keyEnumerator];
         //把keyEnumerator替换为objectEnumerator即可得到value值（1）
+        
+        //------------刷新清楚原数据-------------
+        if (type == DBActionTypesRefresh) {
+            [dataSourceArray removeAllObjects];
+        }
         
         //定义一个不确定类型的对象
         id object;
@@ -225,23 +300,39 @@
             }
         }
         
-        [self dataSourceDidLoad];
+        [self dataSourceDidLoad:type];
         
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         [GlobalVariables handleErrorByString:@"登入失败!请确认网络连接!"];
         NSLog(@"Error: %@", error);
-        [self dataSourceDidError];
+        [self dataSourceDidError:type];
     }];
 }
 
-- (void)dataSourceDidLoad {
+- (void)dataSourceDidLoad:(DBActionTypes)type {
     [[ApplicationDelegate HUD] dismiss];
+    
+    if (type == DBActionTypesRefresh) {
+        [_picCollectionView.header endRefreshing];
+    }
+    else{
+        [_picCollectionView.footer endRefreshing];
+    }
+    
     [_picCollectionView reloadData];
 }
 
-- (void)dataSourceDidError {
+- (void)dataSourceDidError:(DBActionTypes)type {
     [[ApplicationDelegate HUD] dismiss];
+    
+    if (type == DBActionTypesRefresh) {
+        [_picCollectionView.header endRefreshing];
+    }
+    else{
+        [_picCollectionView.footer endRefreshing];
+    }
+    
     [_picCollectionView reloadData];
 }
 

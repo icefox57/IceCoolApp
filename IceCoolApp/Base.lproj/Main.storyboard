@@ -79,7 +79,6 @@
                         <outlet property="btGo" destination="4xg-49-aju" id="UoX-9W-BJg"/>
                         <outlet property="imgBg" destination="RWu-js-Alj" id="fYB-sR-eag"/>
                         <segue destination="FzB-E4-ZII" kind="show" identifier="segueToMain" id="HB5-mp-Oy4"/>
-                        <segue destination="Bly-UB-0yD" kind="show" identifier="test" id="Kph-1Z-P1Q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mBF-H8-e4j" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -403,7 +402,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="RJV-k4-fmZ">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" red="0.32640955690000001" green="0.31918677099999998" blue="0.31598331800000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="K3c-hN-Xjv" customClass="IceWaterFlowLayout">
                                     <size key="itemSize" width="144" height="134"/>
@@ -446,7 +445,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="RJV-k4-fmZ" firstAttribute="leading" secondItem="0T8-wo-x0o" secondAttribute="leading" id="N2C-3A-36m"/>
-                            <constraint firstItem="RJV-k4-fmZ" firstAttribute="top" secondItem="0T8-wo-x0o" secondAttribute="top" constant="64" id="Q0E-4T-Gh4"/>
+                            <constraint firstItem="RJV-k4-fmZ" firstAttribute="top" secondItem="0T8-wo-x0o" secondAttribute="top" id="Q0E-4T-Gh4"/>
                             <constraint firstItem="235-m4-dKU" firstAttribute="top" secondItem="RJV-k4-fmZ" secondAttribute="bottom" id="QMD-2X-shR"/>
                             <constraint firstAttribute="trailing" secondItem="RJV-k4-fmZ" secondAttribute="trailing" id="a1i-4Z-omU"/>
                         </constraints>
@@ -476,7 +475,4 @@
         <image name="list_icon_love.png" width="136" height="70"/>
         <image name="list_icon_loved.png" width="136" height="70"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="Kph-1Z-P1Q"/>
-    </inferredMetricsTieBreakers>
 </document>

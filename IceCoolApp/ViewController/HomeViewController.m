@@ -42,8 +42,6 @@
 
 -(void)viewWillAppear:(BOOL)animated
 {
-    self.navigationController.navigationBarHidden = YES;
-    
     [_btGo setFrame:btRect];
     _btGo.alpha = 1;
     
@@ -65,7 +63,7 @@
         [_btGo setFrame:rect];
         _btGo.alpha = 0;
     } completion:^(BOOL finished) {
-        [self performSegueWithIdentifier:@"test" sender:self];//segueToMain
+        [self performSegueWithIdentifier:@"segueToMain" sender:self];//segueToMain
     }];
 }
 

@@ -105,7 +105,7 @@
     {
         _backgroundBlur = [[FXBlurView alloc] initWithFrame:_containerView.bounds];
         _backgroundBlur.blurRadius = 40;
-        _backgroundBlur.tintColor = [UIColor colorWithHexCode:@"#32ce55"];
+        _backgroundBlur.tintColor = [UIColor flatSpinnerColor];
         _backgroundBlur.dynamic = NO;
         [_backgroundBlur.layer displayIfNeeded];
         
@@ -116,7 +116,7 @@
     else
     {
         _backgroundStatic = [[UIView alloc] initWithFrame:_containerView.bounds];
-        _backgroundStatic.backgroundColor = [UIColor colorWithHexCode:@"#32ce55"];
+        _backgroundStatic.backgroundColor = [UIColor flatSpinnerColor];
     }
 
 }

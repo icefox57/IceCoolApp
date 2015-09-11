@@ -27,7 +27,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    [ApplicationDelegate showLoadingHUD:@"加载中..." view:self.view];
+    [ApplicationDelegate showLoadingHUD:@"Loading..." view:self.view];
     PFQuery *query = [PFQuery queryWithClassName:@"MenuData"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         [[ApplicationDelegate HUD]dismiss];
